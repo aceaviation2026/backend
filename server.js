@@ -11,8 +11,11 @@ app.use(express.json());
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'aceaviation2026@gmail.com',
-        pass: 'ogrr sjzt rhps viyb'
+        // user: 'aceaviation2026@gmail.com',
+        // pass: 'ogrr sjzt rhps viyb'
+
+        user: process.env.EMAIL_USER,
+pass: process.env.EMAIL_PASS
     }
 });
 
@@ -42,8 +45,8 @@ app.post('/api/enquiry', (req, res) => {
             }
 
      await transporter.sendMail({
-    from: `"Ace Aviator Website" <aceaviation2026@gmail.com>`,
-    replyTo: email,   // IMPORTANT: user email goes here
+    from: `"${email}" <aceaviation2026@gmail.com>`,
+    // replyTo: email,   // IMPORTANT: user email goes here
     to: 'aceaviation2026@gmail.com',
     subject: 'New Consultation Request - The Ace Aviator',
     html: `

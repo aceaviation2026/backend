@@ -19,8 +19,8 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-app.get('/', (req,res)=>{
-   res.send('Backend Running');
+app.get('/', (req, res) => {
+  res.send('Backend Running');
 });
 app.post('/api/enquiry', (req, res) => {
 

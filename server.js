@@ -20,7 +20,7 @@ const transporter = nodemailer.createTransport({
 });
 
 app.get('/', (req, res) => {
-  res.send('Backend Running');
+    res.send('Ace Aviator Backend Running');
 });
 app.post('/api/enquiry', (req, res) => {
 
